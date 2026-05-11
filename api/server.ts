@@ -7,7 +7,7 @@ import { initDatabase } from './database/init.js';
 /**
  * start server with port
  */
-const PORT = process.env.PORT || 3001;
+const PORT = process.env.PORT || 3000;
 
 async function startServer() {
   try {
