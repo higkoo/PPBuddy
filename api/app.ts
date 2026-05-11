@@ -37,6 +37,7 @@ app.use('/api/auth', authRoutes)
 app.use('/api/tenant', tenantRoutes)
 app.use('/api/chat', chatRoutes)
 app.use('/api/expert', expertRoutes)
+app.use('/api/experts', expertRoutes)
 
 app.use(
   '/api/health',
