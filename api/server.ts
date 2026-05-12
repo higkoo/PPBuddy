@@ -15,8 +15,13 @@ async function startServer() {
     await initDatabase();
     console.log('Database initialized successfully');
     
-    const server = app.listen(PORT, () => {
-      console.log(`Server ready on port ${PORT}`);
+    const server = app.listen(PORT, '0.0.0.0', () => {
+      const address = server.address();
+      const host = typeof address === 'string' ? address : address?.address;
+      const port = typeof address === 'string' ? PORT : address?.port;
+      console.log(`Server ready on http://${host}:${port}`);
+      console.log(`Local access: http://localhost:${port}`);
+      console.log(`Network access: http://0.0.0.0:${port}`);
     });
     
     /**
